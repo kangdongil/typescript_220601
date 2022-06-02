@@ -29,7 +29,35 @@
     - `let c: number[] = []`
 
 # TypeScript의 다양한 타입 알아보기
-  - optional `?`
+  - optional `?` [TYPE] | undefined
   - Type Alias
   - argument, function type
+  - readonly ~
 
+  - undefined
+  - null
+  - any: disable typescript's protection
+  
+  - void: return 없는 function. 별도 설정하지 않아도 됨.
+  - never: return 없이 error를 발생시킬 때 사용함. / 공집합 표현
+  - unknown: Type이 확실하지 않을 때 if + typeof 으로 체크하기
+  - void > unknown > never
+
+# Tuple
+  - const player: [string, number, boolean] = ...
+
+# Call Signatures
+- Function / Argument / Return의 타입을 명세하기
+- `type [CALL_SIGNATURE] = ([ARG_TYPE]) => [RETURN_TYPE];`
+- `type Add = { ([ARG_TYPE]) : [RETURN_TYPE]}`
+- const [FUNCTION]:[CALL_SIG] = ~
+
+# OverLoading
+  - 외부 Package에서 많이 사용함.
+  - 여러 call signatures를 보유한 function
+
+# Polymorphism
+  - concrete type
+  - generic type
+    - <[GENERIC]>~[GENERIC]
+    - 입력된 타입에 따라 일관성 있게 타입을 판단함
